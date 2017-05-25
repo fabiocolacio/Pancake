@@ -58,3 +58,7 @@ char Stack::peek() const {
     return top->val;
 }
 
+unsigned Stack::length() const {
+    return len;
+}
+

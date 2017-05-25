@@ -11,7 +11,10 @@ Belt::Belt() {
 }
 
 Belt::~Belt() {
-    
+    while (len > 1) {
+        destroy_mov_left();
+    }
+    delete current;
 }
 
 void Belt::expand_left() {

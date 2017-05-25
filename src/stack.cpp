@@ -6,7 +6,9 @@ Stack::Stack() {
 }
 
 Stack::~Stack() {
-
+    while (top) {
+        pop();
+    }
 }
 
 void Stack::push(char c) {

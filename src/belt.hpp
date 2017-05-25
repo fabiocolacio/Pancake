@@ -29,7 +29,7 @@ public:
     void destroy_left();
     void destroy_right();
     
-    Stack& get() const;
+    Stack& stack() const;
     Stack& get_left() const;
     Stack& get_right() const;
 };

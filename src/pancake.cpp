@@ -22,7 +22,7 @@ int main (int argc, char** argv) {
     while (!file.eof()) {
         file >> token;
         if (!file.eof()) {
-            parse_token(token);
+            parse_token(token, stack_belt);
         }
     }
     

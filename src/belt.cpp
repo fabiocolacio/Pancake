@@ -95,7 +95,7 @@ void Belt::destroy_right() {
     }
 }
 
-Stack& Belt::get() const {
+Stack& Belt::stack() const {
     Stack& ref = current->stack;
     return ref;
 }

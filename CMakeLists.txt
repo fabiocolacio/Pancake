@@ -3,7 +3,9 @@ project("Pancake Interpreter")
 set(EXEC_NAME "pancake")
 
 add_executable(
-    ${EXEC_NAME} 
+    ${EXEC_NAME}
+    src/token.cpp
+    src/belt.cpp
     src/stack.cpp
     src/pancake.cpp)
 

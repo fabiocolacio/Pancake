@@ -1,10 +1,30 @@
 #include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include "belt.hpp"
+#include "token.hpp"
 
 using namespace std;
 
 int main (int argc, char** argv) {
-    bool interactive_mode = true;
+    if (argc < 2) {
+        cerr << "Usage: " << argv[0] << " <filename>" << endl;
+        return 0;
+    }
     
+    char* filename = argv[argc - 1];
+    ifstream file(filename);
+    
+    Belt stack_belt;
+    
+    string token;
+    
+    while (!file.eof()) {
+        file >> token;
+        if (!file.eof()) {
+            parse_token(token);
+        }
+    }
     
     return 0;
 }

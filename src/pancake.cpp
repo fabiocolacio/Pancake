@@ -2,7 +2,9 @@
 
 using namespace std;
 
-int main () {
-    cout << "pancake" << endl;
+int main (int argc, char** argv) {
+    bool interactive_mode = true;
+    
+    
     return 0;
 }

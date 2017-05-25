@@ -12,15 +12,16 @@ private:
     };
     
     Node* current;
+    unsigned len;
     
 public:
     Belt();
     ~Belt();
     void cycle_next();
     void cycle_prev();
-    Stack get();
-    Stack get_next();
-    Stack get_prev();
+    Stack& get() const;
+    Stack& get_next() const;
+    Stack& get_prev() const;
 };
 
 #endif

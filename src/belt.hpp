@@ -6,8 +6,8 @@
 class Belt {
 private:
     struct Node {
-        Node* next;
-        Node* prev;
+        Node* left;
+        Node* right;
         Stack stack;
     };
     
@@ -17,11 +17,21 @@ private:
 public:
     Belt();
     ~Belt();
-    void cycle_next();
-    void cycle_prev();
+    
+    void expand_left();
+    void expand_right();
+    
+    void cycle_left();
+    void cycle_right();
+    
+    void destroy_mov_right();
+    void destroy_mov_left();
+    void destroy_left();
+    void destroy_right();
+    
     Stack& get() const;
-    Stack& get_next() const;
-    Stack& get_prev() const;
+    Stack& get_left() const;
+    Stack& get_right() const;
 };
 
 #endif

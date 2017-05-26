@@ -43,3 +43,38 @@ The top of the stack directly to the right of the active stack.
 Pancake commands must be separated by one or more whitespace character
 (spaces, tabs, or newlines).
 
+Command      | Action
+------------:|---
+$NUM         | Any number that is typed will be pushed to TOS
+'$CHAR'      | The ASCII code of a character surrounded with ``'`` will be pushed to TOS
+"$STRING"    | Push each character of the string to TOS starting from the end (spaces wont work yet)
+``+``        | Pop the top two values from TOS, and push their sum to TOS
+``-``        | Pop the top two values from TOS, and push their difference to TOS
+``*``        | Pop the top two values from TOS, and push their product to TOS
+``/``        | Pop the top two values from TOS, and push their quotient to TOS (truncates remainder)
+``%``        | Pop the top two values from TOS, and push their modulus to TOS
+``peek``     | Output the value at TOS (as an ASCII charcter)
+``peek_int`` | Output the decimal ASCII value at TOS
+``pop``      | Pop the value from TOS and output its value as an ASCII character
+``pop_int``  | Pop the value from TOS and output its ASCII decimal value
+``drop``     | Remove the value from TOS (no output)
+
+### Hello World
+
+It won't always suck this much, I swear :)
+
+```
+'\n' "World!" 32 "Hello"
+pop pop pop pop pop
+pop 
+pop pop pop pop pop pop
+pop
+```
+
+### In The Pipeline
+
+- Comments
+- Strings with special characters and whitespaces
+- ``multipop`` & ``multipop_int`` (pop x amount of times, where x is the value at TOS)
+- Belt commands
+- User defined functions

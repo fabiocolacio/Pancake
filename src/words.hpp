@@ -3,6 +3,7 @@
 
 #include "belt.hpp"
 
+void push(Belt&, char);
 void add(Belt&);
 void subtract(Belt&);
 void multiply(Belt&);
@@ -13,5 +14,6 @@ void pop_int(Belt&);
 void multipop(Belt&);
 void multipop_int(Belt&);
 void drop(Belt&);
+void size(Belt&);
 
 #endif

@@ -53,6 +53,8 @@ void parse_token(string token, Belt& belt) {
         multipop(belt);
     } else if (token == "multipop_int") {
         multipop_int(belt);
+    } else if (token == "size") {
+        size(belt);
     }
 }
 

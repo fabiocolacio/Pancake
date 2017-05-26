@@ -74,3 +74,8 @@ void drop(Belt& belt) {
         belt.stack().pop();
     }
 }
+
+void size(Belt& belt) {
+    belt.stack().push(belt.stack().length());
+}
+

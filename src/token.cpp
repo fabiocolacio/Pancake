@@ -2,6 +2,7 @@
 #include <iostream>
 #include "token.hpp"
 #include "belt.hpp"
+#include "words.hpp"
 
 using namespace std;
 
@@ -17,25 +18,15 @@ void parse_token(string token, Belt& belt) {
     } else if (token == "peek_int") {
         cout << (int) belt.stack().peek();
     } else if (token == "+") {
-        char b = belt.stack().pop();
-        char a = belt.stack().pop();
-        belt.stack().push(a + b);
+        add(belt);
     } else if (token =="-") {
-        char b = belt.stack().pop();
-        char a = belt.stack().pop();
-        belt.stack().push(a - b);
+        subtract(belt);
     } else if (token =="*") {
-        char b = belt.stack().pop();
-        char a = belt.stack().pop();
-        belt.stack().push(a * b);
+        multiply(belt);
     } else if (token =="/") {
-        char b = belt.stack().pop();
-        char a = belt.stack().pop();
-        belt.stack().push(a / b);
+        divide(belt);
     } else if (token =="%") {
-        char b = belt.stack().pop();
-        char a = belt.stack().pop();
-        belt.stack().push(a % b);
+        modulo(belt);
     } else if (token == "'\\n'") {
         belt.stack().push('\n');
     } else if (token.at(0) == '\'' &&
@@ -53,11 +44,15 @@ void parse_token(string token, Belt& belt) {
             belt.stack().push(token.at(i));
         }
     } else if (token == "drop") {
-        belt.stack().pop();
+        drop(belt);
     } else if (token == "pop") {
-        cout << belt.stack().pop();
+        pop(belt);
     } else if (token == "pop_int") {
-        cout << (int)belt.stack().pop();
+        pop_int(belt);
+    } else if (token == "multipop") {
+        multipop(belt);
+    } else if (token == "multipop_int") {
+        multipop_int(belt);
     }
 }
 

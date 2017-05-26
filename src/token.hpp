@@ -11,5 +11,5 @@ enum InputMode {
 };
 
 void parse_token(string, Belt&);
-
+    
 #endif

@@ -2,7 +2,7 @@
 
 This is the interpreter for the Pancake programming language.
 
-Pancake is a multi-stack-based programming language inspired by postscript and brainfuck.
+Pancake is a multi-stack-based esoteric programming language inspired by postscript and brainfuck.
 Like other stack-based languages, operations work with data stored at the top of the stack (TOS).
 Like brainfuck, the stack can only store single characters.
 Pancake adds a twist to the stack-based paradigm by adding the ability to control multiple stacks at once.

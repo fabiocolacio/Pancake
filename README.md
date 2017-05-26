@@ -73,6 +73,9 @@ pop
 
 ### Math
 
+Math works using the commands listed above, and expressions
+can be writen in reverse polish notation.
+
 ```
 5 6 + pop       // prints 11
 3 2 * 1 + pop   // prints 7

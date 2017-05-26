@@ -74,8 +74,8 @@ pop
 ### Math
 
 ```
-5 6 + pop       # prints 11
-3 2 * 1 + pop   # prints 7
+5 6 + pop       // prints 11
+3 2 * 1 + pop   // prints 7
 ```
 
 ### In The Pipeline

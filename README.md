@@ -85,7 +85,6 @@ can be writen in reverse polish notation.
 
 - Comments
 - Strings with special characters and whitespaces
-- ``multipop`` & ``multipop_int`` (pop x amount of times, where x is the value at TOS)
 - Belt commands
 - User defined functions
 

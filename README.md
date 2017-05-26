@@ -88,3 +88,22 @@ can be writen in reverse polish notation.
 - ``multipop`` & ``multipop_int`` (pop x amount of times, where x is the value at TOS)
 - Belt commands
 - User defined functions
+
+## Build
+
+```
+$ git clone https://github.com/fabiocolacio/Pancake
+$ cd Pancake
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+$ make
+```
+
+## Install
+
+After building:
+
+```
+$ sudo make install
+```

@@ -59,7 +59,7 @@ Command          | Action
 ``pop_int``      | Pop the value from TOS and output its ASCII decimal value
 ``multipop``     | ``pop`` x amount of times, where x is the value at TOS
 ``multipop_int`` | ``pop_int`` x amount of times, where x is the value at TOS
-``size``         | Push the length of the active stack to TOS
+``size``         | Push the length of the active stack to TOS. **WARNING:** The stack can be bigger than the size of a cell, so this becomes unpredictable for very large stacks.
 ``drop``         | Remove the value from TOS (no output)
 
 ### Hello World

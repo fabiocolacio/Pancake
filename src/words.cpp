@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "words.hpp"
 
 using namespace std;
@@ -77,5 +78,9 @@ void drop(Belt& belt) {
 
 void size(Belt& belt) {
     belt.stack().push(belt.stack().length());
+}
+
+void bye() {
+    exit(0);
 }
 

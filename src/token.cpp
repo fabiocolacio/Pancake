@@ -55,6 +55,8 @@ void parse_token(string token, Belt& belt) {
         multipop_int(belt);
     } else if (token == "size") {
         size(belt);
+    } else if (token == "bye") {
+        bye();
     }
 }
 

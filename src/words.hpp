@@ -15,5 +15,6 @@ void multipop(Belt&);
 void multipop_int(Belt&);
 void drop(Belt&);
 void size(Belt&);
+void bye();
 
 #endif

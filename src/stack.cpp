@@ -27,7 +27,7 @@ void Stack::push(char c) {
 }
 
 char Stack::pop() {
-    char value;
+    char value = 0;
 
     if (top) {
         Node* ptr = top;
@@ -57,7 +57,11 @@ void Stack::swap() {
 }
 
 char Stack::peek() const {
-    return top->val;
+    if (top) {
+        return top->val;
+    }
+    
+    return 0;
 }
 
 unsigned Stack::length() const {

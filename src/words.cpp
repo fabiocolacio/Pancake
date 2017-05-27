@@ -44,6 +44,18 @@ void modulo(Belt& belt) {
     }
 }
 
+void peek(Belt& belt) {
+    if (belt.stack().length() >= 1) {
+        cout << belt.stack().peek();
+    }
+}
+
+void peek_int(Belt& belt) {
+    if (belt.stack().length() >= 1) {
+        cout << (int) belt.stack().peek();
+    }
+}
+
 void pop(Belt& belt) {
     if (belt.stack().length() >= 1) {
         cout << belt.stack().pop();
@@ -82,5 +94,23 @@ void size(Belt& belt) {
 
 void bye() {
     exit(0);
+}
+
+void pop_all(Belt& belt) {
+    while (belt.stack().length() > 0) {
+        pop(belt);
+    }
+}
+
+void pop_all_int(Belt& belt) {
+    while (belt.stack().length() > 0) {
+        pop_int(belt);
+    }
+}
+
+void drop_all(Belt& belt) {
+    while (belt.stack().length() > 0) {
+        drop(belt);
+    }
 }
 

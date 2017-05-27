@@ -40,12 +40,14 @@ int main (int argc, char** argv) {
             {
                 while (true) {
                     cout << "%> ";
-                    getline(cin, token);
-                    token_reader = stringstream(token);
-                    while (!token_reader.eof()) {
-                        token_reader >> token;
-                        parse_token(token, stack_belt);
-                    }
+                    try {
+                        getline(cin, token);
+                        token_reader = stringstream(token);
+                        while (!token_reader.eof()) {
+                            token_reader >> token;
+                            parse_token(token, stack_belt);
+                        }
+                    } catch (...) {}
                 }
             }
             break;

@@ -14,9 +14,9 @@ void parse_token(string token, Belt& belt) {
     } catch (...) {}
 
     if (token == "peek") {
-        cout << belt.stack().peek();
+        peek(belt);
     } else if (token == "peek_int") {
-        cout << (int) belt.stack().peek();
+        peek_int(belt);
     } else if (token == "+") {
         add(belt);
     } else if (token =="-") {
@@ -57,6 +57,12 @@ void parse_token(string token, Belt& belt) {
         size(belt);
     } else if (token == "bye") {
         bye();
+    } else if (token == "pop_all") {
+        pop_all(belt);
+    } else if (token == "pop_all_int") {
+        pop_all_int(belt);
+    } else if (token == "drop_all") {
+        drop_all(belt);
     }
 }
 

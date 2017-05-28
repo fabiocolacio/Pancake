@@ -1,5 +1,8 @@
 project("Pancake Interpreter")
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 set(EXEC_NAME "pancake")
 
 add_executable(

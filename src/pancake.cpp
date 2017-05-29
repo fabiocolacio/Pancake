@@ -18,8 +18,6 @@ int main (int argc, char** argv) {
     
     Belt stack_belt;
     
-    stringstream token_reader;
-    string token;
     string line;
     
     switch (mode) {

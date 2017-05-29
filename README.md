@@ -68,8 +68,8 @@ Command          | Action
 It won't always suck this much, I swear :)
 
 ```
-'\n' "World!" 32 "Hello"
-size multipop   // pop everything off of the stack
+'\n' "Hello world!"
+pop_all
 ```
 
 ### Math
@@ -85,9 +85,9 @@ can be writen in reverse polish notation.
 ### In The Pipeline
 
 - Comments
-- Strings with special characters and whitespaces
 - Belt commands
 - User defined functions
+- Loops
 
 ## Build
 

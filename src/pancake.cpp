@@ -20,6 +20,7 @@ int main (int argc, char** argv) {
     
     stringstream token_reader;
     string token;
+    string line;
     
     switch (mode) {
         case FROM_FILE:
@@ -28,10 +29,10 @@ int main (int argc, char** argv) {
                 ifstream file(filename);
                 
                 while (!file.eof()) {
-                    file >> token;
-                    if (!file.eof()) {
-                        parse_token(token, stack_belt);
-                    }
+                    try {
+                        getline(file, line);
+                        parse_line(line, stack_belt);
+                    } catch (...) {}
                 }
             }
             break;
@@ -41,12 +42,8 @@ int main (int argc, char** argv) {
                 while (true) {
                     cout << "%> ";
                     try {
-                        getline(cin, token);
-                        token_reader = stringstream(token);
-                        while (!token_reader.eof()) {
-                            token_reader >> token;
-                            parse_token(token, stack_belt);
-                        }
+                        getline(cin, line);
+                        parse_line(line, stack_belt);
                     } catch (...) {}
                 }
             }

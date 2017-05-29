@@ -10,6 +10,7 @@ enum InputMode {
     INTERACTIVE, FROM_FILE
 };
 
+void parse_line(string, Belt&);
 void parse_token(string, Belt&);
     
 #endif

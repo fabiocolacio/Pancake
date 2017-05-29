@@ -1,10 +1,20 @@
 #include <string>
 #include <iostream>
+#include <sstream>
 #include "token.hpp"
 #include "belt.hpp"
 #include "words.hpp"
 
 using namespace std;
+
+void parse_line(string line, Belt& belt) {
+    string token;
+    stringstream token_reader = stringstream(line);
+    while (!token_reader.eof()) {
+        token_reader >> token;
+        parse_token(token, belt);
+    }
+}
 
 void parse_token(string token, Belt& belt) {
     int tmp;

@@ -61,7 +61,7 @@ Command          | Action
 ``multipop_int`` | ``pop_int`` x amount of times, where x is the value at TOS
 ``size``         | Push the length of the active stack to TOS. **WARNING:** The stack can be bigger than the size of a cell, so this becomes unpredictable for very large stacks.
 ``drop``         | Remove the value from TOS (no output)
-``//``           | Comment. Interpreter ignores everything to the right of this on this line.
+``#``           | Comment. Interpreter ignores everything to the right of this on this line.
 ``bye``          | Exits the program
 
 ### Hello World

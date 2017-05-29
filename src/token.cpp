@@ -22,6 +22,8 @@ void parse_line(string line, Belt& belt) {
             tmp = "";
         } else if (tmp != "") {
             tmp += " " + token;
+        } else if (token == "//") {
+            break;
         } else {
             parse_token(token, belt);
         }

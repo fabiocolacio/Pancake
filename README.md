@@ -85,7 +85,6 @@ can be writen in reverse polish notation.
 
 ### In The Pipeline
 
-- Comments
 - Belt commands
 - User defined functions
 - Loops

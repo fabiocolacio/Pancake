@@ -91,6 +91,8 @@ can be writen in reverse polish notation.
 
 ## Build
 
+You will need CMake, and C++ 11 or newer to successfully build Pancake.
+
 ```
 $ git clone https://github.com/fabiocolacio/Pancake
 $ cd Pancake

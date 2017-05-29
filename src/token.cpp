@@ -8,11 +8,23 @@
 using namespace std;
 
 void parse_line(string line, Belt& belt) {
-    string token;
+    string token = "", tmp = "";
     stringstream token_reader = stringstream(line);
     while (!token_reader.eof()) {
         token_reader >> token;
-        parse_token(token, belt);
+        
+        if (token.at(0) == '"') {
+            tmp = token;
+        } else if (token.at(token.length() - 1) == '"' &&
+                   tmp.at(0) == '"') {
+            tmp += " " + token;
+            parse_token(tmp, belt);
+            tmp = "";
+        } else if (tmp != "") {
+            tmp += " " + token;
+        } else {
+            parse_token(token, belt);
+        }
     }
 }
 

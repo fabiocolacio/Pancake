@@ -2,51 +2,20 @@
 #include <fstream>
 #include <cstdlib>
 #include <sstream>
+#include "environment.hpp"
 #include "belt.hpp"
 #include "token.hpp"
 
 using namespace std;
 
 int main (int argc, char** argv) {
-    InputMode mode;
-
-    if (argc < 2) {
-        mode = INTERACTIVE;
-    } else {
-        mode = FROM_FILE;
-    }
-    
-    Belt stack_belt;
-    
+    Environment env(argc, argv);
     string line;
-    
-    switch (mode) {
-        case FROM_FILE:
-            {
-                char* filename = argv[argc - 1];
-                ifstream file(filename);
-                
-                while (!file.eof()) {
-                    try {
-                        getline(file, line);
-                        parse_line(line, stack_belt);
-                    } catch (...) {}
-                }
-            }
-            break;
-            
-        case INTERACTIVE:
-            {
-                while (true) {
-                    cout << "%> ";
-                    try {
-                        getline(cin, line);
-                        parse_line(line, stack_belt);
-                    } catch (...) {}
-                }
-            }
-            break;
+
+    while (!env.eof()) {
+        env >> line;
+        parse_line(line);
     }
-    
+
     return 0;
 }

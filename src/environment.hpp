@@ -2,7 +2,9 @@
 #define PANCAKE_Environment
 
 #include <istream>
+#include <fstream>
 #include <stack>
+#include "belt.hpp"
 
 using namespace std;
 
@@ -13,16 +15,17 @@ public:
     };
 
 private:
+    ifstream file;
     stack<streampos> loop_stack;
-    InputMode mode;
-    istream input;
+    InputMode _mode;
+    Belt stack_belt;
 
 public:
-    Environment(string filename = "");
+    Environment(int, char**);
     ~Environment();
-    InputMode get_mode();
-    stack<loop_stack> loop
-
+    InputMode mode() const;
+    bool eof() const;
+    friend istream& operator>>(Environment&, string&);
 };
 
 #endif

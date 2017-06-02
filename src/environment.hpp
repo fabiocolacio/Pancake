@@ -25,7 +25,7 @@ public:
     ~Environment();
     InputMode mode() const;
     bool eof() const;
-    friend istream& operator>>(Environment&, string&);
+    friend Environment& operator>>(Environment&, string&);
 };
 
 #endif

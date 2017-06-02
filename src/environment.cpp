@@ -1,3 +1,4 @@
+#include <iostream>
 #include "environment.hpp"
 
 using namespace std;
@@ -16,24 +17,12 @@ Environment::~Environment() {
 
 }
 
-istream& Environment::stream() {
-    switch (mode) {
-        case FROM_FILE:
-            return file;
-            break;
-
-        case INTERACTIVE:
-            return cin;
-            break;
-    }
-}
-
-Environment::InputMode Environment::get_mode() {
+Environment::InputMode Environment::mode() const {
     return _mode;
 }
 
-bool Environment::eof() {
-    switch (mode) {
+bool Environment::eof() const {
+    switch (_mode) {
         case FROM_FILE:
             return file.eof();
             break;
@@ -48,20 +37,19 @@ bool Environment::eof() {
     }
 }
 
-istream& operator>>(Environment& env, string& str) {
+Environment& operator>>(Environment& env, string& str) {
     try {
-        switch (mode) {
-            case FROM_FILE:
-                getline(file, str);
+        switch (env._mode) {
+            case Environment::FROM_FILE:
+                getline(env.file, str);
                 break;
 
-            case INTERACTIVE:
+            case Environment::INTERACTIVE:
                 cout << "%> ";
                 getline(cin, str);
                 break;
         }
     } catch (...) {}
-
     return env;
 }
 

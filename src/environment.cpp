@@ -17,6 +17,10 @@ Environment::~Environment() {
 
 }
 
+Belt& Environment::belt () {
+    return stack_belt;
+}
+
 Environment::InputMode Environment::mode() const {
     return _mode;
 }

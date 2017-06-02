@@ -1,13 +1,12 @@
-#include <string>
 #include <iostream>
 #include <sstream>
 #include "token.hpp"
-#include "belt.hpp"
 #include "words.hpp"
 
 using namespace std;
 
-void parse_line(string line, Belt& belt) {
+void parse_line(string line, Environment& env) {
+    Belt& belt = env.belt();
     string token = "", tmp = "";
     stringstream token_reader = stringstream(line);
     while (!token_reader.eof()) {
@@ -18,19 +17,20 @@ void parse_line(string line, Belt& belt) {
         } else if (token.at(token.length() - 1) == '"' &&
                    tmp.at(0) == '"') {
             tmp += " " + token;
-            parse_token(tmp, belt);
+            parse_token(tmp, env);
             tmp = "";
         } else if (tmp != "") {
             tmp += " " + token;
         } else if (token == "#") {
             break;
         } else {
-            parse_token(token, belt);
+            parse_token(token, env);
         }
     }
 }
 
-void parse_token(string token, Belt& belt) {
+void parse_token(string token, Environment& env) {
+    Belt& belt = env.belt();
     int tmp;
     try {
         tmp = stoi(token);

@@ -2,7 +2,7 @@
 #define PANCAKE_TOKEN_HPP
 
 #include <string>
-#include "belt.hpp"
+#include "environment.hpp"
 
 using namespace std;
 

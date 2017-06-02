@@ -14,7 +14,7 @@ int main (int argc, char** argv) {
 
     while (!env.eof()) {
         env >> line;
-        parse_line(line);
+        parse_line(line, env);
     }
 
     return 0;

@@ -23,6 +23,7 @@ private:
 public:
     Environment(int, char**);
     ~Environment();
+    Belt& belt();
     InputMode mode() const;
     bool eof() const;
     friend Environment& operator>>(Environment&, string&);

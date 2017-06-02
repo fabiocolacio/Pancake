@@ -7,6 +7,7 @@ set(EXEC_NAME "pancake")
 
 add_executable(
     ${EXEC_NAME}
+    src/environment.cpp
     src/words.cpp
     src/token.cpp
     src/belt.cpp

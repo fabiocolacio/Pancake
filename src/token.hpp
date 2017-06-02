@@ -2,15 +2,11 @@
 #define PANCAKE_TOKEN_HPP
 
 #include <string>
-#include "belt.hpp"
+#include "environment.hpp"
 
 using namespace std;
 
-enum InputMode {
-    INTERACTIVE, FROM_FILE
-};
+void parse_line(string, Environment&);
+void parse_token(string, Environment&);
 
-void parse_line(string, Belt&);
-void parse_token(string, Belt&);
-    
 #endif

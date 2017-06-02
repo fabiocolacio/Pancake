@@ -13,8 +13,10 @@ int main (int argc, char** argv) {
     string line;
 
     while (!env.eof()) {
-        env >> line;
-        parse_line(line, env);
+        try {
+            env >> line;
+            parse_line(line, env);
+        } catch (out_of_range e) {}
     }
 
     return 0;

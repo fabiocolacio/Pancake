@@ -42,18 +42,16 @@ bool Environment::eof() const {
 }
 
 Environment& operator>>(Environment& env, string& str) {
-    try {
-        switch (env._mode) {
-            case Environment::FROM_FILE:
-                getline(env.file, str);
-                break;
+    switch (env._mode) {
+        case Environment::FROM_FILE:
+            getline(env.file, str);
+            break;
 
-            case Environment::INTERACTIVE:
-                cout << "%> ";
-                getline(cin, str);
-                break;
-        }
-    } catch (...) {}
+        case Environment::INTERACTIVE:
+            cout << "%> ";
+            getline(cin, str);
+            break;
+    }
     return env;
 }
 

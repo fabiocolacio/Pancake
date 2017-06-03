@@ -1,6 +1,6 @@
 # The Pancake Interpreter
 
-This is the interpreter for the Pancake programming language.
+🥞🥞 The is the interpreter for the Pancake programming language 🥞🥞
 
 Pancake is a multi-stack-based esoteric programming language inspired by postscript and brainfuck.
 Like other stack-based languages, operations work with data stored at the top of the stack (TOS).

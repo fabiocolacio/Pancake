@@ -3,6 +3,7 @@
 
 #include <istream>
 #include <fstream>
+#include <stack>
 #include <map>
 #include "belt.hpp"
 
@@ -19,14 +20,17 @@ private:
     ifstream file;
     InputMode _mode;
     Belt stack_belt;
+    stack<string> _block;
 
 public:
     Environment(int, char**);
     ~Environment();
     Belt& belt();
 
+    stack<string>& block();
+
     void execute_function(string);
-    void define_function(string, string);
+    void define_function(string, string="");
     void append_function(string, string);
     size_t delete_function(string);
 

@@ -65,6 +65,8 @@ Command          | Action
 ``drop``         | Remove the value from TOS (no output)
 ``drop_all``     | Remove everything from the active stack.
 ``#``            | Comment. Interpreter ignores everything to the right of this on this line.
+``{$FUNC_NAME``  | Begin a function definition
+``}``            | End your function definition
 ``bye``          | Exits the program
 
 ### Hello World
@@ -82,14 +84,35 @@ Math works using the commands listed above, and expressions
 can be writen in reverse polish notation.
 
 ```
+#! /usr/bin/pancake
+
 5 6 + pop       # prints 11
 3 2 * 1 + pop   # prints 7
+```
+
+### User-Defined Functions
+
+```
+#! /usr/bin/pancake
+
+{add + }      # this function just calls the existing '+' function
+5 5 add       # call our add function here
+pop_int       # prints '10'
+
+'\n' pop      # print a newline
+
+{print_hello
+	'\n' "Hello World!"
+	pop_all
+}
+
+print_hello   # calls our print_hello function
+
 ```
 
 ### In The Pipeline
 
 - Belt commands
-- User defined functions
 - Loops
 
 ## Build

@@ -1,5 +1,7 @@
 #include <iostream>
+#include <sstream>
 #include "environment.hpp"
+#include "token.hpp"
 
 using namespace std;
 
@@ -23,6 +25,30 @@ Belt& Environment::belt () {
 
 Environment::InputMode Environment::mode() const {
     return _mode;
+}
+
+void Environment::execute_function(string func_name) {
+    stringstream func(functions[func_name]);
+    string line;
+
+    while (!func.eof()) {
+        try {
+            getline(func, line);
+            parse_line(line, *this);
+        } catch (out_of_range e) {}
+    }
+}
+
+void Environment::define_function(string func_name, string content) {
+    functions[func_name] = content;
+}
+
+void Environment::append_function(string func_name, string content) {
+    functions[func_name] += "\n" + content;
+}
+
+size_t Environment::delete_function(string func_name) {
+    return functions.erase(func_name);
 }
 
 bool Environment::eof() const {

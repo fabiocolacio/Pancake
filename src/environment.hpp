@@ -3,7 +3,6 @@
 
 #include <istream>
 #include <fstream>
-#include <stack>
 #include "belt.hpp"
 
 using namespace std;
@@ -16,7 +15,6 @@ public:
 
 private:
     ifstream file;
-    stack<streampos> loop_stack;
     InputMode _mode;
     Belt stack_belt;
 

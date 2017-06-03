@@ -11,7 +11,7 @@ void parse_line(string line, Environment& env) {
     stringstream token_reader = stringstream(line);
     while (!token_reader.eof()) {
         token_reader >> token;
-        
+
         if (token.at(0) == '"') {
             tmp = token;
         } else if (token.at(token.length() - 1) == '"' &&

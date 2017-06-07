@@ -28,7 +28,6 @@ Environment::InputMode Environment::mode() const {
 }
 
 void Environment::execute_function(string func_name) {
-    cout << "executing function: " << func_name << endl;
     stringstream func(functions[func_name]);
     string line;
 
@@ -41,12 +40,10 @@ void Environment::execute_function(string func_name) {
 }
 
 void Environment::define_function(string func_name, string content) {
-    cout << "defining func: " << func_name << endl;
     functions[func_name] = content;
 }
 
 void Environment::append_function(string func_name, string content) {
-    cout << "appending \n" << content << " to " << func_name << endl;
     functions[func_name] += "\n" + content;
 }
 

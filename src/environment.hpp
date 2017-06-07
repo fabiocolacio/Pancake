@@ -21,6 +21,7 @@ private:
     InputMode _mode;
     Belt stack_belt;
     stack<string> _block;
+    stack<string> _loops;
 
 public:
     Environment(int, char**);
@@ -28,6 +29,7 @@ public:
     Belt& belt();
 
     stack<string>& block();
+    stack<string>& loops();
 
     void execute_function(string);
     void define_function(string, string="");

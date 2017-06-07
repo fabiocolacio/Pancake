@@ -34,6 +34,9 @@ void parse_token(string token, Environment& env) {
         string func_name = token.substr(1);
         env.block().push(func_name);
         env.define_function(func_name);
+    } else if (token == "[") {
+        env.block().push("loop");
+        env.loops().push("");
     }
 
     if (env.block().empty()) {
@@ -100,8 +103,28 @@ void parse_token(string token, Environment& env) {
     } else {
         if (token == "}") {
             env.block().pop();
-        } else if (token.at(0) != '{') {
-            env.append_function(env.block().top(), "\n" + token);
+        } else if (token == "]") {
+            env.block().pop();
+            stringstream loop(env.loops().top());
+            streampos loop_start = loop.tellg();
+            string line;
+            env.loops().pop();
+
+            while (env.belt().stack().peek()) {
+                while (!loop.eof()) {
+                    try {
+                        getline(loop, line);
+                        parse_line(line, env);
+                    } catch (out_of_range e) {}
+                }
+                loop.seekg(loop_start);
+            }
+        } else if (token.at(0) != '{' && token != "[") {
+            if (env.block().top() == "loop") {
+                env.loops().top() += " " + token;
+            } else {
+                env.append_function(env.block().top(), " " + token);
+            }
         }
     }
 }

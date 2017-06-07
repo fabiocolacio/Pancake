@@ -72,6 +72,7 @@ void multipop(Belt& belt) {
     char val = belt.stack().pop();
     while (val > 0 && belt.stack().length() > 0) {
         pop(belt);
+        --val;
     }
 }
 
@@ -79,6 +80,7 @@ void multipop_int(Belt& belt) {
     char val = belt.stack().pop();
     while (val > 0 && belt.stack().length() > 0) {
         pop_int(belt);
+        --val;
     }
 }
 

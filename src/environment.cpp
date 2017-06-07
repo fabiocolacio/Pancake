@@ -55,6 +55,10 @@ stack<string>& Environment::block() {
     return _block;
 }
 
+stack<string>& Environment::loops() {
+    return _loops;
+}
+
 bool Environment::eof() const {
     switch (_mode) {
         case FROM_FILE:

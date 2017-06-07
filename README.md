@@ -67,6 +67,8 @@ Command          | Action
 ``#``            | Comment. Interpreter ignores everything to the right of this on this line.
 ``{$FUNC_NAME``  | Begin a function definition
 ``}``            | End your function definition
+``[``            | Begin a loop. (loop continues as long as TOS is non-zero)
+``]``            | End a loop.
 ``bye``          | Exits the program
 
 ### Hello World
@@ -110,10 +112,27 @@ print_hello   # calls our print_hello function
 
 ```
 
+### Loops
+
+The following example prints "Hello World!" to the console 10 times.
+
+```
+#! /usr/bin/pancake
+
+{print_hello
+	'\n' "Hello World!"
+	13 multipop
+}
+
+10 [
+	print_hello
+	1 -
+]
+```
+
 ### In The Pipeline
 
 - Belt commands
-- Loops
 
 ## Build
 
